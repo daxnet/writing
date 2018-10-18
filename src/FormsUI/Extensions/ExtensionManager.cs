@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -12,8 +13,10 @@ namespace FormsUI.Extensions
     /// </summary>
     public sealed class ExtensionManager : ExternalResourceManager<Extension>
     {
+        private const string ExtensionsFolder = "extensions";
 
-        #region Ctor
+        #region Public Constructors
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtensionManager"/> class.
         /// </summary>
@@ -28,13 +31,15 @@ namespace FormsUI.Extensions
         /// Initializes a new instance of the <see cref="ExtensionManager"/> class.
         /// </summary>
         public ExtensionManager()
-            : this(Application.StartupPath)
+            : this(Path.Combine(Application.StartupPath, ExtensionsFolder))
         {
 
         }
-        #endregion
+
+        #endregion Public Constructors
 
         #region Public Properties
+
         /// <summary>
         /// Gets all of the registered extensions.
         /// </summary>
@@ -49,11 +54,27 @@ namespace FormsUI.Extensions
             }
         }
 
+        #endregion Public Properties
+
+        #region Public Methods
+
+        /// <summary>
+        /// Gets all the registered extensions with the specified extension type.
+        /// </summary>
+        /// <typeparam name="TExtension">The type of the extension to be retrieved</typeparam>
+        /// <returns>A list of registered extensions that have the same type.</returns>
         public IEnumerable<TExtension> GetExtensions<TExtension>()
             where TExtension : Extension => Resources.Values.Where(t => t.GetType().IsSubclassOf(typeof(TExtension))).Select(p => (TExtension)p);
 
-        #endregion
+        #endregion Public Methods
 
+        #region Protected Methods
+
+        /// <summary>
+        /// Loads the resources from the given file.
+        /// </summary>
+        /// <param name="fileName">The name of the file from which the resources are loaded.</param>
+        /// <returns>A list of loaded extensions.</returns>
         protected override IEnumerable<Extension> LoadResources(string fileName)
         {
             var assembly = Assembly.LoadFile(fileName);
@@ -76,5 +97,7 @@ namespace FormsUI.Extensions
             }
             return result;
         }
+
+        #endregion Protected Methods
     }
 }

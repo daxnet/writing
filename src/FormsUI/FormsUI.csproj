@@ -54,29 +54,32 @@
   <ItemGroup>
     <Compile Include="Extensions\Extension.cs" />
     <Compile Include="Extensions\ExtensionAttribute.cs" />
+    <Compile Include="Extensions\ExtensionException.cs" />
     <Compile Include="Extensions\ExtensionLoadEventArgs.cs" />
     <Compile Include="Extensions\ExtensionManager.cs" />
-    <Compile Include="Extensions\ExtensionSettingProvider.cs" />
+    <Compile Include="Extensions\ExtensionSettingsProvider.cs" />
     <Compile Include="Extensions\ExternalResourceLoadEventArgs.cs" />
     <Compile Include="Extensions\ExternalResourceManager.cs" />
     <Compile Include="Extensions\IExtensionSettings.cs" />
     <Compile Include="Extensions\IResource.cs" />
-    <Compile Include="Extensions\NoSettingsControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Extensions\NoSettingsControl.Designer.cs">
-      <DependentUpon>NoSettingsControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Workspaces\IWorkspaceModel.cs" />
+    <Compile Include="Workspaces\MostRecentlyUsedItem.cs" />
+    <Compile Include="Workspaces\MostRecentlyUsedManager.cs" />
+    <Compile Include="Workspaces\Workspace.cs" />
+    <Compile Include="Workspaces\WorkspaceCreatedEventArgs.cs" />
+    <Compile Include="Workspaces\WorkspaceEventArgs.cs" />
+    <Compile Include="Workspaces\WorkspaceException.cs" />
+    <Compile Include="Workspaces\WorkspaceModelVersion.cs" />
+    <Compile Include="Workspaces\WorkspaceModelVersionAttribute.cs" />
+    <Compile Include="Workspaces\WorkspaceOpenedEventArgs.cs" />
+    <Compile Include="Workspaces\WorkspaceSavedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FormsUIKey.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Extensions\NoSettingsControl.resx">
-      <DependentUpon>NoSettingsControl.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

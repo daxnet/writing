@@ -15,7 +15,7 @@ namespace FormsUI.Extensions
 
         private ExtensionAttribute extensionAttribute;
 
-        private ExtensionSettingProvider settingProvider;
+        private ExtensionSettingsProvider settingProvider;
 
         #endregion Private Fields
 
@@ -107,12 +107,12 @@ namespace FormsUI.Extensions
         }
 
         /// <summary>
-        /// Gets <see cref="ExtensionSettingProvider"/> which provides the setting capability for the current extension.
+        /// Gets <see cref="ExtensionSettingsProvider"/> which provides the setting capability for the current extension.
         /// </summary>
         /// <value>
         /// The setting provider.
         /// </value>
-        public ExtensionSettingProvider SettingProvider
+        public ExtensionSettingsProvider SettingProvider
         {
             get
             {
@@ -124,9 +124,9 @@ namespace FormsUI.Extensions
                     }
 
                     if (this.ExtensionAttribute.SettingProviderType != null &&
-                        this.ExtensionAttribute.SettingProviderType.IsSubclassOf(typeof(ExtensionSettingProvider)))
+                        this.ExtensionAttribute.SettingProviderType.IsSubclassOf(typeof(ExtensionSettingsProvider)))
                     {
-                        this.settingProvider = (ExtensionSettingProvider)Activator.CreateInstance(this.ExtensionAttribute.SettingProviderType, new[] { this });
+                        this.settingProvider = (ExtensionSettingsProvider)Activator.CreateInstance(this.ExtensionAttribute.SettingProviderType, new[] { this });
                         return this.settingProvider;
                     }
                     return null;
@@ -220,14 +220,14 @@ namespace FormsUI.Extensions
         {
             var hashCode = -286358620;
             hashCode = hashCode * -1521134295 + EqualityComparer<ExtensionAttribute>.Default.GetHashCode(extensionAttribute);
-            hashCode = hashCode * -1521134295 + EqualityComparer<ExtensionSettingProvider>.Default.GetHashCode(settingProvider);
+            hashCode = hashCode * -1521134295 + EqualityComparer<ExtensionSettingsProvider>.Default.GetHashCode(settingProvider);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Description);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(DisplayName);
             hashCode = hashCode * -1521134295 + EqualityComparer<Image>.Default.GetHashCode(Icon);
             hashCode = hashCode * -1521134295 + EqualityComparer<Guid>.Default.GetHashCode(Id);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Manufacturer);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
-            hashCode = hashCode * -1521134295 + EqualityComparer<ExtensionSettingProvider>.Default.GetHashCode(SettingProvider);
+            hashCode = hashCode * -1521134295 + EqualityComparer<ExtensionSettingsProvider>.Default.GetHashCode(SettingProvider);
             hashCode = hashCode * -1521134295 + EqualityComparer<Version>.Default.GetHashCode(Version);
             hashCode = hashCode * -1521134295 + EqualityComparer<ExtensionAttribute>.Default.GetHashCode(ExtensionAttribute);
             return hashCode;
@@ -252,7 +252,7 @@ namespace FormsUI.Extensions
         /// <returns>The settings configured for the current extension.</returns>
         protected TSettings GetExtensionSetting<TSettings>()
             where TSettings : class, IExtensionSettings
-            => this.SettingProvider?.GetExtensionSetting<TSettings>();
+            => this.SettingProvider?.GetExtensionSettings<TSettings>();
 
         #endregion Protected Methods
 

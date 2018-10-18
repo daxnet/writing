@@ -53,7 +53,7 @@ namespace FormsUI.Extensions
         /// <summary>
         /// Loads the resources from the given file.
         /// </summary>
-        /// <param name="fileName">Name of the file from which the resource is loaded.</param>
+        /// <param name="fileName">Name of the file from which the resources are loaded.</param>
         /// <returns>A list of resource instances.</returns>
         protected abstract IEnumerable<TResource> LoadResources(string fileName);
 
