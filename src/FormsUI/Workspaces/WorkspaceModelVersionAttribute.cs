@@ -1,21 +1,4 @@
-﻿// -----------------------------------------------------------------------------------
-//   _____ _      _____    _____ __  __ _____   ____  _____ _______
-//  / ____| |    |  __ \  |_   _|  \/  |  __ \ / __ \|  __ \__   __|
-// | (___ | |    | |  | |   | | | \  / | |__) | |  | | |__) | | |
-//  \___ \| |    | |  | |   | | | |\/| |  ___/| |  | |  _  /  | |
-//  ____) | |____| |__| |  _| |_| |  | | |    | |__| | | \ \  | |
-// |_____/|______|_____/  |_____|_|  |_|_|     \____/|_|  \_\ |_|
-//
-//   Copyright © 2016-2018 PerkinElmer Inc.,
-//   940 Winter Street, Waltham, MA 02451.
-//   All rights reserved.
-//   This software is the confidential and proprietary information
-//   of PerkinElmer Inc. ("Confidential Information"). You shall not
-//   disclose such Confidential Information and may not use it in any way,
-//   absent an express written license agreement between you and PerkinElmer Inc.
-//   that authorizes such use.
-// -----------------------------------------------------------------------------------
-
+﻿
 using System;
 
 namespace FormsUI.Workspaces

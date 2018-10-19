@@ -15,7 +15,6 @@ namespace FormsUI.Workspaces
 
         #region Private Fields
 
-        private bool changed;
         private bool closed = true;
         private string workspaceFileName;
 
@@ -75,21 +74,20 @@ namespace FormsUI.Workspaces
         }
 
         /// <summary>
+        /// Gets a value indicating whether the current workspace has changed.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if the current workspace has changed; otherwise, <c>false</c>.
+        /// </value>
+        public bool HasChanged { get; private set; }
+
+        /// <summary>
         /// Gets a value indicating whether the current workspace is active.
         /// </summary>
         /// <value>
         ///   <c>true</c> if the current workspace is active; otherwise, <c>false</c>.
         /// </value>
         public bool IsActive => !closed;
-
-        /// <summary>
-        /// Gets a value indicating whether the current workspace has changed.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if the current workspace has changed; otherwise, <c>false</c>.
-        /// </value>
-        public bool HasChanged => changed;
-
         /// <summary>
         /// Gets the model instance of the workspace.
         /// </summary>
@@ -148,7 +146,7 @@ namespace FormsUI.Workspaces
         /// <returns>True if the close was successful, otherwise, false.</returns>
         public bool Close()
         {
-            if (changed)
+            if (HasChanged)
             {
                 var dlg = MessageBox.Show("Workspace has changed, do you want to save the changes?",
                     "Confirmation",
@@ -165,7 +163,7 @@ namespace FormsUI.Workspaces
                     if (savedResult)
                     {
                         OnWorkspaceClosed(EventArgs.Empty);
-                        changed = false;
+                        HasChanged = false;
                     }
 
                     return savedResult;
@@ -173,9 +171,17 @@ namespace FormsUI.Workspaces
             }
 
             OnWorkspaceClosed(EventArgs.Empty);
-            changed = false;
+            HasChanged = false;
             closed = true;
             return true;
+        }
+
+        /// <summary>
+        /// Forcibly notify that the workspace has changed.
+        /// </summary>
+        public void ForceChange()
+        {
+            this.OnWorkspaceChanged(EventArgs.Empty);
         }
 
         /// <summary>
@@ -233,7 +239,6 @@ namespace FormsUI.Workspaces
                 return false;
             }
         }
-
         /// <summary>
         /// Opens the workspace with the specified file name.
         /// </summary>
@@ -330,7 +335,7 @@ namespace FormsUI.Workspaces
         protected virtual void OnWorkspaceChanged(EventArgs e)
         {
             this.WorkspaceChanged?.Invoke(this, e);
-            changed = true;
+            HasChanged = true;
         }
 
         /// <summary>
@@ -341,7 +346,7 @@ namespace FormsUI.Workspaces
         {
             this.WorkspaceClosed?.Invoke(this, e);
 
-            this.changed = false;
+            this.HasChanged = false;
             this.workspaceFileName = null;
         }
 
@@ -352,7 +357,7 @@ namespace FormsUI.Workspaces
         protected virtual void OnWorkspaceCreated(WorkspaceCreatedEventArgs<TModel> e)
         {
             this.WorkspaceCreated?.Invoke(this, e);
-            changed = true;
+            HasChanged = true;
         }
 
         /// <summary>
@@ -372,7 +377,7 @@ namespace FormsUI.Workspaces
         protected virtual void OnWorkspaceSaved(WorkspaceSavedEventArgs<TModel> e)
         {
             this.WorkspaceSaved?.Invoke(this, e);
-            changed = false;
+            HasChanged = false;
         }
 
         /// <summary>
