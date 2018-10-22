@@ -102,5 +102,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FormsUI\FormsUI.csproj">
+      <Project>{81c1e803-53aa-4737-a1f8-1611593d002a}</Project>
+      <Name>FormsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Writing.Core\Writing.Core.csproj">
+      <Project>{2eb6a9fa-1533-47d9-a26e-5efbaa6a632f}</Project>
+      <Name>Writing.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
