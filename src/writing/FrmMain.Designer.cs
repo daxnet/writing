@@ -38,23 +38,21 @@
             this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.mainSplitContainer = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
-            this.kryptonHeaderGroupOutline = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
-            this.buttonSpecHeaderGroupOutlineCollapse = new ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup();
-            this.htmlEditor1 = new Writing.Core.Controls.HtmlEditor();
+            this.titlePanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.txtTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.editor = new Writing.Core.Controls.HtmlEditor();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.kryptonRibbonGroup1 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple1 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.kryptonRibbonGroupButton1 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupButton2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupButton3 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer.Panel1)).BeginInit();
-            this.mainSplitContainer.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer.Panel2)).BeginInit();
-            this.mainSplitContainer.Panel2.SuspendLayout();
-            this.mainSplitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroupOutline)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroupOutline.Panel)).BeginInit();
-            this.kryptonHeaderGroupOutline.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.titlePanel)).BeginInit();
+            this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonMenu
@@ -73,6 +71,8 @@
             // 
             // rbTabHome
             // 
+            this.rbTabHome.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.kryptonRibbonGroup1});
             this.rbTabHome.KeyTip = "H";
             this.rbTabHome.Text = "Home";
             // 
@@ -127,54 +127,60 @@
             this.kryptonPage4.ToolTipTitle = "Page ToolTip";
             this.kryptonPage4.UniqueName = "ED586A25BA1B4EF10C8DC943507E419A";
             // 
-            // mainSplitContainer
+            // titlePanel
             // 
-            this.mainSplitContainer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.mainSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.mainSplitContainer.Location = new System.Drawing.Point(0, 115);
-            this.mainSplitContainer.Name = "mainSplitContainer";
+            this.titlePanel.Controls.Add(this.dateTimePicker);
+            this.titlePanel.Controls.Add(this.txtTitle);
+            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlePanel.Location = new System.Drawing.Point(0, 115);
+            this.titlePanel.Name = "titlePanel";
+            this.titlePanel.Size = new System.Drawing.Size(877, 29);
+            this.titlePanel.TabIndex = 2;
             // 
-            // mainSplitContainer.Panel1
+            // txtTitle
             // 
-            this.mainSplitContainer.Panel1.Controls.Add(this.kryptonHeaderGroupOutline);
+            this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTitle.Location = new System.Drawing.Point(3, 3);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(714, 23);
+            this.txtTitle.TabIndex = 0;
             // 
-            // mainSplitContainer.Panel2
+            // editor
             // 
-            this.mainSplitContainer.Panel2.Controls.Add(this.htmlEditor1);
-            this.mainSplitContainer.Size = new System.Drawing.Size(877, 499);
-            this.mainSplitContainer.SplitterDistance = 292;
-            this.mainSplitContainer.TabIndex = 2;
+            this.editor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editor.Location = new System.Drawing.Point(0, 144);
+            this.editor.Name = "editor";
+            this.editor.Size = new System.Drawing.Size(877, 470);
+            this.editor.TabIndex = 3;
             // 
-            // kryptonHeaderGroupOutline
+            // dateTimePicker
             // 
-            this.kryptonHeaderGroupOutline.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup[] {
-            this.buttonSpecHeaderGroupOutlineCollapse});
-            this.kryptonHeaderGroupOutline.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonHeaderGroupOutline.Location = new System.Drawing.Point(0, 0);
-            this.kryptonHeaderGroupOutline.Name = "kryptonHeaderGroupOutline";
-            this.kryptonHeaderGroupOutline.Size = new System.Drawing.Size(292, 499);
-            this.kryptonHeaderGroupOutline.TabIndex = 0;
+            this.dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker.Location = new System.Drawing.Point(723, 4);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker.TabIndex = 1;
             // 
-            // buttonSpecHeaderGroupOutlineCollapse
+            // kryptonRibbonGroup1
             // 
-            this.buttonSpecHeaderGroupOutlineCollapse.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowLeft;
-            this.buttonSpecHeaderGroupOutlineCollapse.UniqueName = "A10BECB59DFC4BA303AEBD0F692D0DD9";
+            this.kryptonRibbonGroup1.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple1});
             // 
-            // htmlEditor1
+            // kryptonRibbonGroupTriple1
             // 
-            this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.htmlEditor1.Location = new System.Drawing.Point(0, 0);
-            this.htmlEditor1.Name = "htmlEditor1";
-            this.htmlEditor1.Size = new System.Drawing.Size(580, 499);
-            this.htmlEditor1.TabIndex = 0;
+            this.kryptonRibbonGroupTriple1.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.kryptonRibbonGroupButton1,
+            this.kryptonRibbonGroupButton2,
+            this.kryptonRibbonGroupButton3});
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 636);
-            this.Controls.Add(this.mainSplitContainer);
+            this.Controls.Add(this.editor);
+            this.Controls.Add(this.titlePanel);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.ribbonMenu);
             this.Name = "FrmMain";
@@ -184,15 +190,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer.Panel1)).EndInit();
-            this.mainSplitContainer.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer.Panel2)).EndInit();
-            this.mainSplitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
-            this.mainSplitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroupOutline.Panel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroupOutline)).EndInit();
-            this.kryptonHeaderGroupOutline.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.titlePanel)).EndInit();
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,9 +209,14 @@
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage3;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage4;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonTab rbTabHome;
-        private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer mainSplitContainer;
-        private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroupOutline;
-        private ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup buttonSpecHeaderGroupOutlineCollapse;
-        private Writing.Core.Controls.HtmlEditor htmlEditor1;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel titlePanel;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtTitle;
+        private Writing.Core.Controls.HtmlEditor editor;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple1;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton1;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton2;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton3;
     }
 }

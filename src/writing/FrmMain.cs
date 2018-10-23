@@ -16,6 +16,7 @@ namespace writing
         public FrmMain()
         {
             InitializeComponent();
+            
         }
     }
 }

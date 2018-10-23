@@ -21,6 +21,7 @@ namespace Writing.Core.Controls
 
         private void InitializeEditingSurface()
         {
+            editingSurface.DocumentText = "<html><body></body></html>";
             if (editingSurface.Document != null)
             {
                 // Turn on the design mode
@@ -31,7 +32,6 @@ namespace Writing.Core.Controls
 
                 // Disabling the default context-menu
                 editingSurface.IsWebBrowserContextMenuEnabled = false;
-
             }
         }
     }
