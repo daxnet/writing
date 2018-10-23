@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Writing.Core.Properties;
 
 namespace Writing.Core.Tools
 {
@@ -19,6 +20,18 @@ namespace Writing.Core.Tools
 
         public virtual ToolTab ToolTab => ToolTab.Home;
 
+        public abstract ToolGroup ToolGroup { get; }
+
         public virtual Keys ShortcutKeys => Keys.None;
+
+        public override string Description => ToolName;
+
+        public override string Manufacturer => Resources.Manufacturer;
+
+        public virtual int OrderingIndex => 0;
+
+        public virtual ToolType ToolType => ToolType.Button;
+
+        public abstract Task ExecuteAsync(IWritingContext context);
     }
 }

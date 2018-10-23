@@ -30,8 +30,10 @@ namespace FormsUI.Extensions
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtensionManager"/> class.
         /// </summary>
-        public ExtensionManager()
-            : this(Path.Combine(Application.StartupPath, ExtensionsFolder))
+        /// <param name="searchFromExtensionsFolder">The boolean value indicates whether the searching of the extensions should
+        /// be based on the extensions sub folder.</param>
+        public ExtensionManager(bool searchFromExtensionsFolder = true)
+            : this(searchFromExtensionsFolder ? Path.Combine(Application.StartupPath, ExtensionsFolder) : Application.StartupPath)
         {
 
         }

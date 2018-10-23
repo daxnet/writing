@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormsUI.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,12 @@ namespace writing
         [STAThread]
         static void Main()
         {
+            var extensionManager = new ExtensionManager(false);
+            extensionManager.Load();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new FrmMain(extensionManager));
         }
     }
 }

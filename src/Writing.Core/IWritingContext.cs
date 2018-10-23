@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Writing.Core
 {
-    public class Class1
+    public interface IWritingContext
     {
+        string Text { get; }
     }
 }
