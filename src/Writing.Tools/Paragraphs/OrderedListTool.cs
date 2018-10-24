@@ -28,6 +28,11 @@ namespace Writing.Tools.Paragraphs
 
         public override Task ExecuteAsync(IWritingContext context)
         {
+            if (!context.Document.Focused)
+            {
+                context.Document.Focus();
+            }
+
             context.Document.ExecCommand("InsertOrderedList", false, null);
             return Task.CompletedTask;
         }

@@ -30,6 +30,11 @@ namespace Writing.Tools.Fonts
 
         public override Task ExecuteAsync(IWritingContext context)
         {
+            if (!context.Document.Focused)
+            {
+                context.Document.Focus();
+            }
+
             context.Document.ExecCommand("Italic", false, null);
             return Task.CompletedTask;
         }

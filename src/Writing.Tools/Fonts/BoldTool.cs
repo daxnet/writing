@@ -31,6 +31,11 @@ namespace Writing.Tools.Fonts
 
         public override Task ExecuteAsync(IWritingContext context)
         {
+            if (!context.Document.Focused)
+            {
+                context.Document.Focus();
+            }
+
             context.Document.ExecCommand("Bold", false, null);
             return Task.CompletedTask;
         }

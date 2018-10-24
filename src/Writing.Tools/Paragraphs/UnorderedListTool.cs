@@ -28,7 +28,13 @@ namespace Writing.Tools.Paragraphs
 
         public override Task ExecuteAsync(IWritingContext context)
         {
-            throw new NotImplementedException();
+            if (!context.Document.Focused)
+            {
+                context.Document.Focus();
+            }
+
+            context.Document.ExecCommand("InsertUnorderedList", false, null);
+            return Task.CompletedTask;
         }
     }
 }

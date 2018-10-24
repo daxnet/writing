@@ -53,6 +53,8 @@
     <Compile Include="Fonts\BoldTool.cs" />
     <Compile Include="Fonts\FontTool.cs" />
     <Compile Include="Fonts\ItalicTool.cs" />
+    <Compile Include="Fonts\StrikethroughTool.cs" />
+    <Compile Include="Fonts\UnderlineTool.cs" />
     <Compile Include="Paragraphs\OrderedListTool.cs" />
     <Compile Include="Paragraphs\UnorderedListTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +124,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RightAlign_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strikethrough_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strikethrough_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Underline_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Underline_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
