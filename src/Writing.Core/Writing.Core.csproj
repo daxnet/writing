@@ -37,6 +37,12 @@
     <AssemblyOriginatorKeyFile>WritingKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\libs\Krypton\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\libs\Krypton\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -59,16 +65,23 @@
     <Compile Include="Controls\HtmlEditor.Designer.cs">
       <DependentUpon>HtmlEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\WritingModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Tools\ButtonTool.cs" />
+    <Compile Include="Tools\DropdownTool.cs" />
     <Compile Include="Tools\Tool.cs" />
     <Compile Include="Tools\ToolGroup.cs" />
+    <Compile Include="Tools\ToolsManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Tools\ToolTab.cs" />
     <Compile Include="Tools\ToolType.cs" />
+    <Compile Include="WritingWorkspace.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\HtmlEditor.resx">

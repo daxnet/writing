@@ -19,6 +19,8 @@ namespace Writing.Core.Controls
             this.InitializeEditingSurface();
         }
 
+        public HtmlDocument HtmlDocument => editingSurface.Document;
+
         private void InitializeEditingSurface()
         {
             editingSurface.DocumentText = "<html><body></body></html>";

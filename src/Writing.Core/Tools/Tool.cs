@@ -14,9 +14,7 @@ namespace Writing.Core.Tools
     {
         public abstract string ToolName { get; }
 
-        public virtual string Tooltip => ToolName;
-
-        public abstract Image ToolIcon { get; }
+        public virtual string ToolTip => ToolName;
 
         public virtual ToolTab ToolTab => ToolTab.Home;
 

@@ -8,7 +8,10 @@ namespace Writing.Core.Tools
 {
     public sealed class ToolGroup
     {
-        public ToolGroup(string name, int orderingIndex)
+        public static readonly ToolGroup Fonts = new ToolGroup("Fonts", 0);
+        public static readonly ToolGroup Paragraphs = new ToolGroup("Paragraphs", 10);
+
+        private ToolGroup(string name, int orderingIndex)
         {
             Name = name;
             OrderingIndex = orderingIndex;

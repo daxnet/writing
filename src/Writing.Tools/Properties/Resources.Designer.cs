@@ -63,9 +63,9 @@ namespace Writing.Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bold {
+        internal static System.Drawing.Bitmap Bold_16 {
             get {
-                object obj = ResourceManager.GetObject("Bold", resourceCulture);
+                object obj = ResourceManager.GetObject("Bold_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,69 @@ namespace Writing.Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Italic {
+        internal static System.Drawing.Bitmap Bold_32 {
             get {
-                object obj = ResourceManager.GetObject("Italic", resourceCulture);
+                object obj = ResourceManager.GetObject("Bold_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CenterAlign_16 {
+            get {
+                object obj = ResourceManager.GetObject("CenterAlign_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CenterAlign_32 {
+            get {
+                object obj = ResourceManager.GetObject("CenterAlign_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Italic_16 {
+            get {
+                object obj = ResourceManager.GetObject("Italic_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Italic_32 {
+            get {
+                object obj = ResourceManager.GetObject("Italic_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LeftAlign_16 {
+            get {
+                object obj = ResourceManager.GetObject("LeftAlign_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LeftAlign_32 {
+            get {
+                object obj = ResourceManager.GetObject("LeftAlign_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -92,9 +152,9 @@ namespace Writing.Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Strikethrough {
+        internal static System.Drawing.Bitmap OrderedList_16 {
             get {
-                object obj = ResourceManager.GetObject("Strikethrough", resourceCulture);
+                object obj = ResourceManager.GetObject("OrderedList_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -102,9 +162,49 @@ namespace Writing.Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Underline {
+        internal static System.Drawing.Bitmap OrderedList_32 {
             get {
-                object obj = ResourceManager.GetObject("Underline", resourceCulture);
+                object obj = ResourceManager.GetObject("OrderedList_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RightAlign_16 {
+            get {
+                object obj = ResourceManager.GetObject("RightAlign_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RightAlign_32 {
+            get {
+                object obj = ResourceManager.GetObject("RightAlign_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UnorderedList_16 {
+            get {
+                object obj = ResourceManager.GetObject("UnorderedList_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UnorderedList_32 {
+            get {
+                object obj = ResourceManager.GetObject("UnorderedList_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
